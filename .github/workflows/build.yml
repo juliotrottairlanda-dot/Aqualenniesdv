@@ -17,5 +17,11 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Build Plugin
+      - name: Build plugin
         run: mvn package
+
+      - name: Upload plugin
+        uses: actions/upload-artifact@v3
+        with:
+          name: plugin
+          path: target/*.jar
